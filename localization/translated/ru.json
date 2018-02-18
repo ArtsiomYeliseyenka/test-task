@@ -1,0 +1,7 @@
+{
+  "RegistrationForm.confirmPasswordHint": "Пароли не совпадают",
+  "RegistrationForm.email": "Email не корректен",
+  "RegistrationForm.ipHint": "IP address is invalid",
+  "RegistrationForm.nameHint": "Поле не должно быть пустым",
+  "RegistrationForm.passwordHint": "От '6' до '16' символов"
+}

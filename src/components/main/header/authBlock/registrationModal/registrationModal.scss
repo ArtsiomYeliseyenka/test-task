@@ -1,0 +1,48 @@
+.content-wrapper {
+  width: 100%;
+  padding: 0 25px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: $COLOR--gray;
+}
+.tip-message {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 40px;
+
+ &::before {
+   content: '*';
+   margin-right: 3px;
+   color: $COLOR--blue;
+ }
+}
+
+.registration-form {
+  width: 100%;
+  position: relative;
+
+}
+.field-wrapper {
+  width: 100%;
+  margin-bottom: 25px;
+}
+.field-label {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+
+  &::after {
+    content: '*';
+    margin-left: 3px;
+    color: $COLOR--blue;
+  }
+}
+.field {
+  float: right;
+  width: 250px;
+  height: 30px;
+}
+.hidden {
+  display: none;
+}

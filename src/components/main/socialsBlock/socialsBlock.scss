@@ -1,0 +1,50 @@
+.socials-block {
+  width: 100%;
+  height: 100%;
+}
+.social-link {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 23px;
+  height: 23px;
+  margin-right: 15px;
+  border-radius: 4px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.social-link-content {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+
+  &:hover {
+    background-size: 150%;
+  }
+}
+.fb-link {
+  background-image: url(./img/f.png);
+
+  &:hover {
+    background-image: url(./img/f-hover.png);
+  }
+}
+.tw-link {
+  background-image: url(./img/tw.png);
+
+  &:hover {
+    background-image: url(./img/tw-hover.png);
+  }
+}
+.vk-link {
+  background-image: url(./img/vk.png);
+
+  &:hover {
+    background-image: url(./img/vk-hover.png);
+  }
+}
