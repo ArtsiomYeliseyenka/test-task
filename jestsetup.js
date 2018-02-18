@@ -8,7 +8,6 @@ configure({ adapter: new Adapter() });
 
 global.React = React;
 global.Utils = Utils;
-global.STORYBOOK = false;
 global.JEST = true;
 global.localStorage = (() => {
   let store = {};

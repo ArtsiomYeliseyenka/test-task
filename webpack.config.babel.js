@@ -9,7 +9,6 @@ import CompressionPlugin from 'compression-webpack-plugin';
 const defaultEnv = {
   dev: true,
   production: false,
-  storybook: false,
 };
 
 export default (env = defaultEnv) => ({
@@ -38,7 +37,6 @@ export default (env = defaultEnv) => ({
     new WebpackNotifierPlugin({ skipFirstNotification: true }),
     new webpack.DefinePlugin({
       JEST: false,
-      STORYBOOK: JSON.stringify(env.storybook),
     }),
     new webpack.ProvidePlugin({
       React: 'react',

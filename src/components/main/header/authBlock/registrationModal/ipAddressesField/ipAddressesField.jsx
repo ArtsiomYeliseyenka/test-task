@@ -19,12 +19,14 @@ const cx = classNames.bind(styles);
 export class IpAddressesField extends Component {
   static propTypes = {
     submitForm: PropTypes.func,
+    reset: PropTypes.func,
     valid: PropTypes.bool,
     handleSubmit: PropTypes.func.isRequired,
   };
   static defaultProps = {
     valid: false,
     submitForm: () => {},
+    reset: () => {},
   };
   state = {
     currentValue: '',
@@ -38,9 +40,12 @@ export class IpAddressesField extends Component {
   };
   addItem = () => {
     const items = this.state.items;
-    console.log(items);
-    items.push(this.state.currentValue);
-    this.setState({ items });
+    const value = this.state.currentValue;
+    if (value && items.length < 5 && items.indexOf(value) === -1) {
+      items.push(value);
+      this.setState({ items });
+      this.props.reset();
+    }
   };
   render() {
     return (
@@ -60,6 +65,7 @@ export class IpAddressesField extends Component {
           { Array.map(this.state.items, (item, index) => (
             <div key={index} className={cx('ip-item')}>
               { item }
+              <span className={cx('remove')}>Remove</span>
             </div>
             )) }
         </div>

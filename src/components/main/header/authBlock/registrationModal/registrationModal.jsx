@@ -39,10 +39,12 @@ export class RegistrationModal extends Component {
     hideModalAction: () => {},
     submitForm: () => {},
   };
-
   handleSubmit = () => {
     this.submit.click();
     return this.props.valid;
+  };
+  validateIpField = () => {
+
   };
   render() {
     return (
