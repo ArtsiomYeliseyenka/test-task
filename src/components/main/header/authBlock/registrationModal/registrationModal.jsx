@@ -9,6 +9,7 @@ import { hideModalAction } from 'controllers/modal';
 import { connect } from 'react-redux';
 import { withModal, ModalLayout } from 'components/main/modal';
 import classNames from 'classnames/bind';
+import { IpAddressesField } from './ipAddressesField';
 import styles from './registrationModal.scss';
 
 const cx = classNames.bind(styles);
@@ -79,6 +80,15 @@ export class RegistrationModal extends Component {
 
             <div className={cx('field-wrapper')}>
               <div className={cx('field-label')}>
+                IP addresses
+              </div>
+              <div className={cx('ip-field')}>
+                <IpAddressesField />
+              </div>
+            </div>
+
+            <div className={cx('field-wrapper')}>
+              <div className={cx('field-label')}>
                 Password
               </div>
               <div className={cx('field')}>
@@ -102,7 +112,7 @@ export class RegistrationModal extends Component {
                 </FieldProvider>
               </div>
             </div>
-            <button ref={(submit) => { this.submit = submit; }} className={cx('hidden')} type="submit">123</button>
+            <button ref={(submit) => { this.submit = submit; }} className={cx('hidden')} type="submit" />
           </form>
         </div>
       </ModalLayout>
