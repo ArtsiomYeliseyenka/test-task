@@ -13,12 +13,13 @@ const cx = classNames.bind(styles);
 
 @reduxForm({
   form: 'IpAddresses',
-  validate: ({ ip }) => ({
-    ip: (!ip || !validate.ip(ip)) && 'ipHint',
+  validate: ({ ip }, props) => ({
+    ip: (!props.isAddresses && (!ip || !validate.ip(ip))) && 'ipHint',
   }),
 })
 export class IpAddressesField extends Component {
   static propTypes = {
+    ipAddresses: PropTypes.array,
     submitForm: PropTypes.func,
     reset: PropTypes.func,
     valid: PropTypes.bool,
@@ -28,6 +29,7 @@ export class IpAddressesField extends Component {
     onRef: PropTypes.func,
   };
   static defaultProps = {
+    ipAddresses: [],
     valid: false,
     submitForm: () => {},
     reset: () => {},
@@ -37,7 +39,6 @@ export class IpAddressesField extends Component {
   };
   state = {
     currentValue: '',
-    items: [],
   };
   componentDidMount() {
     this.props.onRef(this);
@@ -56,20 +57,20 @@ export class IpAddressesField extends Component {
     this.props.valid && this.addItem();
   };
   addItem = () => {
-    const items = this.state.items;
+    const items = this.props.ipAddresses;
     const value = this.state.currentValue;
     if (value && items.length < 5 && items.indexOf(value) === -1) {
       items.push(value);
-      this.setState({ items, value: '' });
+      this.setState({ value: '' });
       this.props.reset();
-      this.props.onIpListChange(this.state.items);
+      this.props.onIpListChange(items);
     }
   };
   removeItem = (e) => {
-    const items = this.state.items;
+    const items = this.props.ipAddresses;
     items.splice(e.currentTarget.dataset.index, 1);
     this.setState({ items });
-    this.props.onIpListChange(this.state.items);
+    this.props.onIpListChange(items);
   };
   render() {
     return (
@@ -88,7 +89,7 @@ export class IpAddressesField extends Component {
           </span>
         </div>
         <div className={cx('ip-list')}>
-          { Array.map(this.state.items, (item, index) => (
+          { Array.map(this.props.ipAddresses, (item, index) => (
             <div key={index} className={cx('ip-item')}>
               { item }
               <span className={cx('remove')} onClick={this.removeItem} data-index={index}>

@@ -73,12 +73,12 @@ export class RegistrationModal extends Component {
     submitForm: () => {},
   };
   state = {
-    hasIpAddresses: false,
+    ipAddresses: [],
   };
   handleSubmit = () => {
     this.submit.click();
-    !this.state.hasIpAddresses && this.ipAddressesField.highlight();
-    return this.props.valid && this.state.hasIpAddresses;
+    !this.state.ipAddresses.length && this.ipAddressesField.highlight();
+    return this.props.valid && this.state.ipAddresses.length;
   };
   render() {
     const { formatMessage } = this.props.intl;
@@ -126,9 +126,10 @@ export class RegistrationModal extends Component {
               </div>
               <div className={cx('ip-field')}>
                 <IpAddressesField
+                  ipAddresses={this.state.ipAddresses}
                   onRef={(ipAddressesField) => { this.ipAddressesField = ipAddressesField; }}
-                  onIpListChange={(ipItems) => {
-                    this.setState({ hasIpAddresses: !!ipItems.length });
+                  onIpListChange={(ipAddresses) => {
+                    this.setState({ ipAddresses });
                   }}
                 />
               </div>
