@@ -1,4 +1,4 @@
-import { email, password, login, name } from './validation';
+import { email, password, ip, name } from './validation';
 
 describe('Email', () => {
   test(' validation should be correct', () => {
@@ -30,10 +30,10 @@ describe('Email', () => {
 
 describe('Password', () => {
   test('validation should be correct', () => {
-    expect(password('1234')).toBe(true);
-    expect(password('1234567890123456789012345')).toBe(true);
-    expect(password('Aa1@3@.?n&()*^HFU')).toBe(true);
-    expect(password('firstname+lastname@ex')).toBe(true);
+    expect(password('123456')).toBe(true);
+    expect(password('123456789012345')).toBe(true);
+    expect(password('Aa1@3@.?n&()*^')).toBe(true);
+    expect(password('firstname+last')).toBe(true);
   });
   test('validation should be not correct', () => {
     expect(password('1')).toBe(false);
@@ -43,30 +43,27 @@ describe('Password', () => {
   });
 });
 
-describe('Login', () => {
-  test('validation should be correct', () => {
-    expect(login('login')).toBe(true);
-    expect(login('login-test_123.foo')).toBe(true);
-  });
-  test('validation should not be correct', () => {
-    expect(login('')).toBe(false);
-    expect(login('login^test')).toBe(false);
-    expect(login('логин')).toBe(false);
-  });
-});
-
 describe('Name', () => {
   test('validation should be correct', () => {
     expect(name('abc')).toBe(true);
-    expect(name('full name')).toBe(true);
-    expect(name('полное имя')).toBe(true);
-    expect(name('full name with.some_symbols-123')).toBe(true);
   });
   test('Validation should not be correct', () => {
     expect(name('')).toBe(false);
-    expect(name('a')).toBe(false);
-    expect(name('ab')).toBe(false);
     expect(name('name#')).toBe(false);
     expect(name('Hello 世界')).toBe(false);
+  });
+});
+
+describe('IP', () => {
+  test('validation should be correct', () => {
+    expect(ip('0.0.0.0')).toBe(true);
+    expect(ip('255.255.255.255')).toBe(true);
+    expect(ip('1.22.99.200')).toBe(true);
+  });
+  test('Validation should not be correct', () => {
+    expect(ip('')).toBe(false);
+    expect(ip('256.256.256.256')).toBe(false);
+    expect(ip('0000.1111.1111.1222')).toBe(false);
+    expect(ip('000111.222333')).toBe(false);
   });
 });
