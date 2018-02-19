@@ -10,6 +10,11 @@
   background-image: url(./img/banner.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 1920px 500px;
+  
+  @media (max-width: $SCREEN_MD_MAX) {
+    background-size: unset;
+  }
 }
 .animated-logo {
   position: absolute;

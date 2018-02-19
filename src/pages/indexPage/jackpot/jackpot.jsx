@@ -33,13 +33,16 @@ export class Jackpot extends Component {
         </div>
         <div className={cx('jackpot-items')}>
           <div className={cx('jackpot-item', 'gold')}>
-            { this.props.jackpot.gold }
+            <div className={cx('jackpot-coin')} />
+            { this.props.jackpot.gold.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }
           </div>
           <div className={cx('jackpot-item', 'silver')}>
-            { this.props.jackpot.silver }
+            <div className={cx('jackpot-coin')} />
+            { this.props.jackpot.silver.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }
           </div>
           <div className={cx('jackpot-item', 'bronze')}>
-            { this.props.jackpot.bronze }
+            <div className={cx('jackpot-coin')} />
+            { this.props.jackpot.bronze.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') }
           </div>
         </div>
       </div>
