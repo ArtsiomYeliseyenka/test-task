@@ -30,6 +30,7 @@ export default (env = defaultEnv) => ({
       store: path.resolve(__dirname, 'src/store'),
       routes: path.resolve(__dirname, 'src/routes'),
       layouts: path.resolve(__dirname, 'src/layouts'),
+      serverDataMocks: path.resolve(__dirname, 'src/serverDataMocks'),
     },
   },
   plugins: [

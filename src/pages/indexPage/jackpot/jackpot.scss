@@ -1,0 +1,46 @@
+.jackpot {
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  box-sizing: border-box;
+}
+.block-title {
+  font-family: $FONT-CONDBOLD;
+  font-size: 15px;
+  color: $COLOR--neon-orange;
+  text-shadow:
+    2px 0 10px $COLOR--neon-orange-shadow,
+    -2px 0 10px $COLOR--neon-orange-shadow,
+    0 2px 10px $COLOR--neon-orange-shadow,
+    0 -2px 10px $COLOR--neon-orange-shadow;
+  text-transform: uppercase;
+}
+.jackpot-items {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  font: $FONT-BOLD;
+  line-height: 50px;
+  color: white;
+}
+.jackpot-item {
+  float: left;
+  width: 33%;
+  height: 100%;
+  padding-left: 55px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: -6px center;
+
+  &.gold {
+    background-image: url(./img/gold.png);
+  }
+
+  &.silver {
+    background-image: url(./img/silver.png);
+  }
+
+  &.bronze {
+    background-image: url(./img/bronze.png);
+  }
+}

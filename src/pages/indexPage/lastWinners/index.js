@@ -1,0 +1,1 @@
+export { LastWinners } from './lastWinners';
