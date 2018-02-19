@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
+import { FormattedMessage } from 'react-intl';
 import { FieldProvider } from 'components/fields/fieldProvider';
 import { connect } from 'react-redux';
 import { NeonButton } from 'components/buttons/neonButton';
@@ -29,7 +30,7 @@ export class AuthBlock extends Component {
       <div className={cx('auth-block')}>
         <div className={cx('registration-btn')}>
           <NeonButton color={'neon-blue'} onClick={() => this.props.showModalAction({ modalType: 'registrationModal' })}>
-            Registration
+            <FormattedMessage id={'AuthBlock.registration'} defaultMessage={'Registration'} />
           </NeonButton>
         </div>
         <div className={cx('input-wrapper')}>
@@ -42,11 +43,13 @@ export class AuthBlock extends Component {
             <Input type="password" placeholder="Password" />
           </FieldProvider>
           <span className={cx('forgot-link')}>
-          Forgot your password?
+            <FormattedMessage id={'AuthBlock.forgotPass'} defaultMessage={'Forgot your password?'} />
           </span>
         </div>
         <div className={cx('login-btn')}>
-          <NeonButton color={'neon-orange'}>Login</NeonButton>
+          <NeonButton color={'neon-orange'}>
+            <FormattedMessage id={'AuthBlock.login'} defaultMessage={'Login'} />
+          </NeonButton>
         </div>
       </div>
     );

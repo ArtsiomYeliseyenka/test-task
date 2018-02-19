@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 const getLanguageLabel = (lang) => {
   switch (lang) {
     case 'ru':
-      return 'Russian';
+      return 'Русский';
     default:
       return 'English';
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { reduxForm } from 'redux-form';
 import { FieldErrorHint } from 'components/fields/fieldErrorHint';
 import { FieldProvider } from 'components/fields/fieldProvider';
@@ -22,20 +23,36 @@ export class IpAddressesField extends Component {
     reset: PropTypes.func,
     valid: PropTypes.bool,
     handleSubmit: PropTypes.func.isRequired,
+    touch: PropTypes.func.isRequired,
+    onIpListChange: PropTypes.func,
+    onRef: PropTypes.func,
   };
   static defaultProps = {
     valid: false,
     submitForm: () => {},
     reset: () => {},
+    touch: () => {},
+    onIpListChange: () => {},
+    onRef: () => {},
   };
   state = {
     currentValue: '',
     items: [],
   };
+  componentDidMount() {
+    this.props.onRef(this);
+  }
+  componentWillUnmount() {
+    this.props.onRef(undefined);
+  }
+  highlight() {
+    this.props.touch('ip');
+  }
   changeHandler = (e) => {
     this.setState({ currentValue: e.target.value });
   };
   addIpClick = () => {
+    this.props.touch('ip');
     this.props.valid && this.addItem();
   };
   addItem = () => {
@@ -43,9 +60,16 @@ export class IpAddressesField extends Component {
     const value = this.state.currentValue;
     if (value && items.length < 5 && items.indexOf(value) === -1) {
       items.push(value);
-      this.setState({ items });
+      this.setState({ items, value: '' });
       this.props.reset();
+      this.props.onIpListChange(this.state.items);
     }
+  };
+  removeItem = (e) => {
+    const items = this.state.items;
+    items.splice(e.currentTarget.dataset.index, 1);
+    this.setState({ items });
+    this.props.onIpListChange(this.state.items);
   };
   render() {
     return (
@@ -59,13 +83,17 @@ export class IpAddressesField extends Component {
         </div>
         <div className={cx('add-button')} onClick={this.addIpClick}>
           <i className={cx('icon')}>+</i>
-          <span className={cx('text')}>add IP</span>
+          <span className={cx('text')}>
+            <FormattedMessage id={'regModal.addIp'} defaultMessage={'Add IP'} />
+          </span>
         </div>
         <div className={cx('ip-list')}>
           { Array.map(this.state.items, (item, index) => (
             <div key={index} className={cx('ip-item')}>
               { item }
-              <span className={cx('remove')}>Remove</span>
+              <span className={cx('remove')} onClick={this.removeItem} data-index={index}>
+                <FormattedMessage id={'regModal.removeIp'} defaultMessage={'Remove'} />
+              </span>
             </div>
             )) }
         </div>

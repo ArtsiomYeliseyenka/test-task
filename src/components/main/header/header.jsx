@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import { LocalizationSwitcher } from 'components/main/localizationSwitcher';
 import { SocialsBlock } from 'components/main/socialsBlock';
 import classNames from 'classnames/bind';
 import { AuthBlock } from './authBlock';
 import styles from './header.scss';
-
 
 const cx = classNames.bind(styles);
 
@@ -13,28 +13,27 @@ export const Header = () => (
     <div className={cx('top-block')}>
       <div className={cx('header-menu')}>
         <NavLink to={'/all-games'} className={cx('nav-link')} activeClassName={cx('active')} >
-            All Games
+          <FormattedMessage id={'HeaderNav.allGames'} defaultMessage={'All Games'} />
         </NavLink>
         <NavLink to={'/refill'} className={cx('nav-link')} activeClassName={cx('active')} >
-            Refill
+          <FormattedMessage id={'HeaderNav.refill'} defaultMessage={'Refill'} />
         </NavLink>
         <NavLink to={'/get-a-win'} className={cx('nav-link')} activeClassName={cx('active')} >
-            Get a wins
+          <FormattedMessage id={'HeaderNav.getWin'} defaultMessage={'Get a wins'} />
         </NavLink>
         <NavLink to={'/bonuses'} className={cx('nav-link')} activeClassName={cx('active')} >
-            Bonuses
+          <FormattedMessage id={'HeaderNav.bonuses'} defaultMessage={'Bonuses'} />
         </NavLink>
         <NavLink to={'/mobile-version'} className={cx('nav-link')} activeClassName={cx('active')} >
-            Mobile version
+          <FormattedMessage id={'HeaderNav.mobileVersion'} defaultMessage={'Mobile version'} />
         </NavLink>
         <NavLink to={'/contacts'} className={cx('nav-link')} activeClassName={cx('active')} >
-            Contacts
+          <FormattedMessage id={'HeaderNav.contacts'} defaultMessage={'Contacts'} />
         </NavLink>
       </div>
-
       <div className={cx('top-block-right')}>
         <div className={cx('quick-registration')}>
-            Quick registration
+          <FormattedMessage id={'Header.quickReg'} defaultMessage={'Quick registration'} />
         </div>
         <div className={cx('socials-block-container')}>
           <SocialsBlock />
@@ -42,7 +41,6 @@ export const Header = () => (
         <LocalizationSwitcher />
       </div>
     </div>
-
     <div className={cx('bottom-block')}>
       <div className={cx('auth-block-container')}>
         <AuthBlock />
