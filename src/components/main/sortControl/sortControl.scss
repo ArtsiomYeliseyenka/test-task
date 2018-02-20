@@ -1,0 +1,36 @@
+.sort-control {
+  position: relative;
+  left: 0;
+  display: inline-block;
+  width: 50%;
+  font-family: $FONT-REGULAR;
+  font-size: 13px;
+  line-height: 25px;
+}
+.label {
+  display: inline-block;
+  margin-right: 5px;
+  text-transform: uppercase;
+}
+.sort-criteria {
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:after {
+    display: inline-block;
+    margin: 0 5px;
+    content: '|';
+    font-family: $FONT-REGULAR;
+    font-size: 20px;
+    cursor: default;
+  }
+
+  &:last-child:after {
+    display: none;
+  }
+}
+.active {
+  font-family: $FONT-BOLD;
+  font-size: 15px;
+}

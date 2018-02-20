@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames/bind';
 import { NeonGhostButton } from 'components/buttons/neonGhostButton';
+import { SortControl } from 'components/main/sortControl';
 import styles from './indexPage.scss';
 import AnimatedLogo from './img/animated-logo-inline.svg';
 import CardsIcon from './img/cards-icon.png';
@@ -23,6 +24,12 @@ export class IndexPage extends Component {
   static defaultProps = {
     showModalAction: () => {},
   };
+  state = {
+    sortCriteria: 'abcSort',
+  };
+  changeSortHandler = (criteria) => {
+    this.setState({ sortCriteria: criteria });
+  };
   render() {
     return (
       <div className={cx('index-page')}>
@@ -31,6 +38,7 @@ export class IndexPage extends Component {
             { Parser(AnimatedLogo) }
           </div>
         </div>
+
         <div className={cx('statistics-wrapper')}>
           <div className={cx('separator')} />
           <div className={cx('statistics-block')}>
@@ -40,34 +48,44 @@ export class IndexPage extends Component {
             <Jackpot />
           </div>
           <div className={cx('separator')} />
-          <div className={cx('games-buttons')}>
-            <div className={cx('game-button-holder')}>
-              <NeonGhostButton icon={PopularIcon} >
-                <FormattedMessage id={'indexPage.popularBtn'} defaultMessage={'Popular'} />
-              </NeonGhostButton>
-            </div>
-            <div className={cx('game-button-holder')}>
-              <NeonGhostButton icon={NewIcon} >
-                <FormattedMessage id={'indexPage.newBtn'} defaultMessage={'New'} />
-              </NeonGhostButton>
-            </div>
-            <div className={cx('game-button-holder')}>
-              <NeonGhostButton icon={SlotIcon} >
-                <FormattedMessage id={'indexPage.slotBtn'} defaultMessage={'Slot games'} />
-              </NeonGhostButton>
-            </div>
-            <div className={cx('game-button-holder')}>
-              <NeonGhostButton icon={CardsIcon} >
-                <FormattedMessage id={'indexPage.cardsBtn'} defaultMessage={'Card games'} />
-              </NeonGhostButton>
-            </div>
-            <div className={cx('game-button-holder')}>
-              <NeonGhostButton icon={RouletteIcon} >
-                <FormattedMessage id={'indexPage.rouletteBtn'} defaultMessage={'Roulette'} />
-              </NeonGhostButton>
-            </div>
+        </div>
+
+        <div className={cx('games-buttons')}>
+          <div className={cx('game-button-holder')}>
+            <NeonGhostButton icon={PopularIcon} >
+              <FormattedMessage id={'indexPage.popularBtn'} defaultMessage={'Popular'} />
+            </NeonGhostButton>
+          </div>
+          <div className={cx('game-button-holder')}>
+            <NeonGhostButton icon={NewIcon} >
+              <FormattedMessage id={'indexPage.newBtn'} defaultMessage={'New'} />
+            </NeonGhostButton>
+          </div>
+          <div className={cx('game-button-holder')}>
+            <NeonGhostButton icon={SlotIcon} >
+              <FormattedMessage id={'indexPage.slotBtn'} defaultMessage={'Slot games'} />
+            </NeonGhostButton>
+          </div>
+          <div className={cx('game-button-holder')}>
+            <NeonGhostButton icon={CardsIcon} >
+              <FormattedMessage id={'indexPage.cardsBtn'} defaultMessage={'Card games'} />
+            </NeonGhostButton>
+          </div>
+          <div className={cx('game-button-holder')}>
+            <NeonGhostButton icon={RouletteIcon} >
+              <FormattedMessage id={'indexPage.rouletteBtn'} defaultMessage={'Roulette'} />
+            </NeonGhostButton>
           </div>
         </div>
+
+        <div className={cx('sort-search-area')}>
+          <SortControl
+            activeCriteria={this.state.sortCriteria}
+            items={['abcSort', 'popularitySort']}
+            onChange={this.changeSortHandler}
+          />
+        </div>
+
       </div>
     );
   }

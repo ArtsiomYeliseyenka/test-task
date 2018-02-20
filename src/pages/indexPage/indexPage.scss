@@ -51,7 +51,7 @@
   height: 30px;
   width: 100%;
   max-width: 1000px;
-  margin: auto;
+  margin: 15px auto;
 }
 .game-button-holder {
   display: inline-block;
@@ -59,9 +59,14 @@
   width: 180px;
   height: 30px;
   margin-right: 25px;
-  margin-top: 15px;
 
   &:last-child {
     margin-right: 0;
   }
+}
+.sort-search-area {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: $COLOR--white;
 }
