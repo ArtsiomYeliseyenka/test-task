@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 export const NeonButton = ({ type, children, disabled, color, onClick }) => {
   const classes = cx({
-    'big-button': true,
+    'neon-button': true,
     disabled,
     [`color-${color}`]: color,
   });

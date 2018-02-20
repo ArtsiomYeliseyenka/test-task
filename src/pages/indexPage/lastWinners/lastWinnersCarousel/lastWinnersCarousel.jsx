@@ -20,7 +20,7 @@ export class LastWinnersCarousel extends Component {
   render() {
     const sliderConfig = {
       slidesToShow: 3,
-      autoplay: false,
+      autoplay: true,
       dots: false,
       arrows: true,
     };
