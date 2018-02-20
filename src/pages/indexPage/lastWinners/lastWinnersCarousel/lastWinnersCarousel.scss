@@ -1,0 +1,42 @@
+.last-winners-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.winner {
+  height: 100%;
+  max-width: 170px;
+}
+.avatar {
+  float: left;
+  width: 70px;
+  height: 40px;
+  margin-right: 10px;
+}
+.winner-info {
+  float: right;
+  width: 65px;
+  height: 40px;
+
+}
+.game {
+  width: 100%;
+  color: $COLOR--white;
+  font-family: $FONT-BOLD;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.win-sum {
+  width: 100%;
+  color: $COLOR--gold;
+  font-family: $FONT-CONDBOLD;
+  font-size: 12px;
+}
+.name {
+  width: 100%;
+  color: $COLOR--white;;
+  font-family: $FONT-REGULAR;
+  font-size: 11px;
+}

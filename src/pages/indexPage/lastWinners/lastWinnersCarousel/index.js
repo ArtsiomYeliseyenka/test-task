@@ -1,0 +1,1 @@
+export { LastWinnersCarousel } from './lastWinnersCarousel';
