@@ -22,6 +22,7 @@ export class LastWinnersCarousel extends Component {
       slidesToShow: 3,
       autoplay: false,
       dots: false,
+      arrows: true,
     };
     return (
       <div className={cx('last-winners-carousel')}>
