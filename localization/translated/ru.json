@@ -11,6 +11,7 @@
   "HeaderNav.refill": "Пополнение счёта",
   "IndexPage.abcSort": "а-я",
   "IndexPage.popularitySort": "Популярность",
+  "IndexPage.searchPlaceholder": "Найти игру...",
   "Jackpot.title": "Джекпот",
   "LastWinners.title": "Недавние победители",
   "RegistrationForm.confirmPasswordHint": "Пароли не совпадают",

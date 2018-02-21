@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { reduxForm } from 'redux-form';
 import Parser from 'html-react-parser';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl, intlShape, defineMessages } from 'react-intl';
 import classNames from 'classnames/bind';
+import { FieldProvider } from 'components/fields/fieldProvider';
+import { FieldSearch } from 'components/fields/fieldSearch';
+import { Input } from 'components/inputs/input';
 import { NeonGhostButton } from 'components/buttons/neonGhostButton';
 import { SortControl } from 'components/main/sortControl';
 import styles from './indexPage.scss';
@@ -16,10 +20,21 @@ import { LastWinners } from './lastWinners';
 import { Jackpot } from './jackpot';
 
 const cx = classNames.bind(styles);
+const messages = defineMessages({
+  searchPlaceholder: {
+    id: 'IndexPage.searchPlaceholder',
+    defaultMessage: 'Search for game...',
+  },
+});
 
+@reduxForm({
+  form: 'search',
+})
+@injectIntl
 export class IndexPage extends Component {
   static propTypes = {
     showModalAction: PropTypes.func.isRequired,
+    intl: intlShape.isRequired,
   };
   static defaultProps = {
     showModalAction: () => {},
@@ -31,6 +46,8 @@ export class IndexPage extends Component {
     this.setState({ sortCriteria: criteria });
   };
   render() {
+    const { formatMessage } = this.props.intl;
+
     return (
       <div className={cx('index-page')}>
         <div className={cx('main-banner')}>
@@ -84,6 +101,13 @@ export class IndexPage extends Component {
             items={['abcSort', 'popularitySort']}
             onChange={this.changeSortHandler}
           />
+          <div className={cx('search-wrapper')}>
+            <FieldProvider name="search">
+              <FieldSearch>
+                <Input dark placeholder={formatMessage(messages.searchPlaceholder)} />
+              </FieldSearch>
+            </FieldProvider>
+          </div>
         </div>
 
       </div>
