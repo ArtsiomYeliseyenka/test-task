@@ -4,6 +4,7 @@ import { langReducer } from 'controllers/lang';
 import { modalReducer } from 'controllers/modal';
 import { statisticsReducer } from 'controllers/statistics';
 import { promotionsReducer } from 'controllers/promotions';
+import { gamesReducer } from 'controllers/games';
 
 export const rootReducer = combineReducers({
   lang: langReducer,
@@ -11,4 +12,5 @@ export const rootReducer = combineReducers({
   modal: modalReducer,
   statistics: statisticsReducer,
   promotions: promotionsReducer,
+  games: gamesReducer,
 });

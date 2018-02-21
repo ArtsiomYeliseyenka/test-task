@@ -2,6 +2,8 @@
   "AuthBlock.forgotPass": "Забыли пароль?",
   "AuthBlock.login": "Войти",
   "AuthBlock.registration": "Регистрация",
+  "GameBlock.demoBtn": "Демо",
+  "GameBlock.playNowBtn": "Играть",
   "Header.quickReg": "Быстрая регистрация",
   "HeaderNav.allGames": "Все игры",
   "HeaderNav.bonuses": "Бонусы",

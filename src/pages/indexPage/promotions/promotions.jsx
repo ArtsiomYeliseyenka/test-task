@@ -7,7 +7,6 @@ import { promotionsSelector, fetchPromotionsAction } from 'controllers/promotion
 import classNames from 'classnames/bind';
 import styles from './promotions.scss';
 
-
 const cx = classNames.bind(styles);
 
 @connect(state => ({

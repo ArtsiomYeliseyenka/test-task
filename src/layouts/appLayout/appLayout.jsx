@@ -21,8 +21,8 @@ export class AppLayout extends PureComponent {
   };
   render() {
     return (
-      <ScrollWrapper>
-        <div className={cx('app-container')}>
+      <div className={cx('app-container')}>
+        <ScrollWrapper>
           <div className={cx('header-container')}>
             <Header />
           </div>
@@ -32,8 +32,8 @@ export class AppLayout extends PureComponent {
           <div className={cx('footer-container')}>
             <Footer />
           </div>
-        </div>
-      </ScrollWrapper>
+        </ScrollWrapper>
+      </div>
     );
   }
 }
