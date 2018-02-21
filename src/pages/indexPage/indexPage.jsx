@@ -18,6 +18,7 @@ import RouletteIcon from './img/roulette-icon.png';
 import SlotIcon from './img/slot-icon.png';
 import { LastWinners } from './lastWinners';
 import { Jackpot } from './jackpot';
+import { Promotions } from './promotions';
 
 const cx = classNames.bind(styles);
 const messages = defineMessages({
@@ -107,6 +108,12 @@ export class IndexPage extends Component {
                 <Input dark placeholder={formatMessage(messages.searchPlaceholder)} />
               </FieldSearch>
             </FieldProvider>
+          </div>
+        </div>
+
+        <div className={cx('main-content')}>
+          <div className={cx('promotions-block')}>
+            <Promotions />
           </div>
         </div>
 

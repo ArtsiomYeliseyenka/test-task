@@ -7,7 +7,6 @@ import classNames from 'classnames/bind';
 import styles from './lastWinners.scss';
 import { LastWinnersCarousel } from './lastWinnersCarousel';
 
-
 const cx = classNames.bind(styles);
 
 @connect(state => ({

@@ -9,6 +9,7 @@ const RootRoute = () => (
     <AppLayout>
       <Switch>
         <Route exact path="/" component={IndexPage} />
+        <Route component={IndexPage} />
       </Switch>
     </AppLayout>
     <ModalContainer />

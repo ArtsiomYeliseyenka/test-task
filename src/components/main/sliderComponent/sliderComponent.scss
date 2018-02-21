@@ -1,0 +1,79 @@
+.slider-component {
+  position: relative;
+  width: 390px;
+  height: 245px;
+  box-sizing: border-box;
+  border: 1px solid $COLOR--blue;
+
+  :global {
+    .slick-dots {
+      left: 10px;
+      top: 10px;
+      bottom: unset;
+      text-align: unset;
+
+      li {
+        button:before {
+          width: 15px;
+          height: 15px;
+          font-size: 15px;
+          color: $COLOR--white;
+          line-height: 18px;
+          border-radius: 100%;
+          box-shadow:
+            0 0 8px 5px $COLOR--black;
+          box-sizing: border-box;
+          opacity: 0.6;
+        }
+        &:hover {
+          button:before {
+            opacity: 1;
+          }
+        }
+
+        &.slick-active {
+          button:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+.promo {
+  position: relative;
+  width: 388px;
+  height: 243px;
+}
+.banner {
+  width: 100%;
+  height: 100%;
+}
+.promo-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: right;
+}
+.promo-title {
+  font-family: $FONT-CONDBOLD;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: $COLOR--gold;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image:
+    linear-gradient(to left, #bf792a 0%, #fed204 30%, #feeb8e 50%, #fed204 70%, #bf7a2a 95%, #efe15c 100%),
+    linear-gradient(#e8e9ea, #e8e9ea);
+
+}
+.promo-description {
+  color: $COLOR--white;
+  font-family: $FONT-REGULAR;
+  font-size: 13px;
+}
