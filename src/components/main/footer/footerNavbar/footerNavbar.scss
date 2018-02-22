@@ -30,4 +30,13 @@
     color: $COLOR--white;
   }
 
+  &.active {
+    pointer-events: none;
+    color: $COLOR--neon-blue;
+    text-shadow:
+      2px 0 10px $COLOR--neon-blue-shadow,
+      -2px 0 10px $COLOR--neon-blue-shadow,
+      0 2px 10px $COLOR--neon-blue-shadow,
+      0 -2px 10px $COLOR--neon-blue-shadow;
+  }
 }

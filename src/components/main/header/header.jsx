@@ -42,6 +42,7 @@ export const Header = () => (
       </div>
     </div>
     <div className={cx('bottom-block')}>
+      <div className={cx('logo')} />
       <div className={cx('auth-block-container')}>
         <AuthBlock />
       </div>

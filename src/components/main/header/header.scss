@@ -40,6 +40,16 @@
       0 2px 10px $COLOR--neon-orange-shadow,
       0 -2px 10px $COLOR--neon-orange-shadow;
   }
+
+  &.active {
+    pointer-events: none;
+    color: $COLOR--neon-blue;
+    text-shadow:
+      2px 0 10px $COLOR--neon-blue-shadow,
+      -2px 0 10px $COLOR--neon-blue-shadow,
+      0 2px 10px $COLOR--neon-blue-shadow,
+      0 -2px 10px $COLOR--neon-blue-shadow;
+  }
 }
 .top-block-right {
   position: absolute;
@@ -80,10 +90,6 @@
   max-width: 1000px;
   height: 80px;
   margin: 0 auto;
-  background-image: url(./img/bottom-block-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: contain;
   background-color: $COLOR--black;
 
   &::before {
@@ -104,6 +110,18 @@
     height: 1px;
     background: $GRADIENT--separator;
   }
+}
+.logo {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 600px;
+  height: 100%;
+  margin-left: -235px;
+  background-image: url(./img/bottom-block-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: left -1px;
+  background-size: 100%;
 }
 .auth-block-container {
   position: absolute;

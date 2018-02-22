@@ -1,0 +1,1 @@
+export { GetWinPage } from './getWinPage';

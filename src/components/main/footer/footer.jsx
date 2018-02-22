@@ -12,7 +12,7 @@ export const Footer = () => (
       <FooterNavbar />
       <Payments />
       <div className={cx('copyright')}>
-        <FormattedMessage id={'Footer.copyright'} defaultMessage={'© 2018 . All rights reserved.'} />
+        <FormattedMessage id={'Footer.copyright'} defaultMessage={'© 2018 All rights reserved.'} />
       </div>
     </div>
   </div>

@@ -1,0 +1,1 @@
+export { MobileVersionPage } from './mobileVersionPage';
