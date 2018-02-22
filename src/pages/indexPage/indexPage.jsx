@@ -11,6 +11,7 @@ import { gamesSelector, fetchGamesAction } from 'controllers/games';
 import { FieldProvider } from 'components/fields/fieldProvider';
 import { FieldSearch } from 'components/fields/fieldSearch';
 import { Input } from 'components/inputs/input';
+import { NeonButton } from 'components/buttons/neonButton';
 import { NeonGhostButton } from 'components/buttons/neonGhostButton';
 import { SortControl } from 'components/main/sortControl';
 
@@ -141,6 +142,11 @@ export class IndexPage extends Component {
               </div>
               ))
           }
+          <div className={cx('more-games-btn')}>
+            <NeonButton color={'neon-blue'}>
+              <FormattedMessage id={'IndexPage.moreGamesBtn'} defaultMessage={'More games'} />
+            </NeonButton>
+          </div>
         </div>
       </div>
     );
