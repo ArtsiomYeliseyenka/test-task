@@ -13,7 +13,7 @@
       text-align: unset;
 
       li {
-        button:before {
+        button::before {
           width: 15px;
           height: 15px;
           font-size: 15px;
@@ -26,13 +26,13 @@
           opacity: 0.6;
         }
         &:hover {
-          button:before {
+          button::before {
             opacity: 1;
           }
         }
 
         &.slick-active {
-          button:before {
+          button::before {
             opacity: 1;
           }
         }

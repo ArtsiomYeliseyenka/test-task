@@ -147,6 +147,7 @@ export class IndexPage extends Component {
               <FormattedMessage id={'IndexPage.moreGamesBtn'} defaultMessage={'More games'} />
             </NeonButton>
           </div>
+          <div className={cx('separator')} />
         </div>
       </div>
     );

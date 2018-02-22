@@ -1,0 +1,66 @@
+.payments {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.payment-item {
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+  margin-right: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.mastercard {
+    width: 95px;
+    background-image: url(./img/mastercard.png);
+
+    &:hover {
+      background-image: url(./img/mastercard-hover.png);
+    }
+  }
+  &.yandex {
+    width: 105px;
+    background-image: url(./img/yandex.png);
+
+    &:hover {
+      background-image: url(./img/yandex-hover.png);
+    }
+  }
+  &.visa {
+    width: 100px;
+    background-image: url(./img/visa.png);
+
+    &:hover {
+      background-image: url(./img/visa-hover.png);
+    }
+  }
+  &.liqpay {
+    width: 165px;
+    background-image: url(./img/liqpay.png);
+
+    &:hover {
+      background-image: url(./img/liqpay-hover.png);
+    }
+  }
+  &.qiwi {
+    width: 130px;
+    background-image: url(./img/qiwi.png);
+
+    &:hover {
+      background-image: url(./img/qiwi-hover.png);
+    }
+  }
+}
+.separator {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: $GRADIENT--separator-dark;
+}

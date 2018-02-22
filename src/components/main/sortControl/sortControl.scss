@@ -18,7 +18,7 @@
   text-transform: uppercase;
   cursor: pointer;
 
-  &:after {
+  &::after {
     display: inline-block;
     margin: 0 5px;
     content: '|';
@@ -27,7 +27,7 @@
     cursor: default;
   }
 
-  &:last-child:after {
+  &:last-child::after {
     display: none;
   }
 }
