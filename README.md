@@ -7,8 +7,8 @@ To launch the application, follow these steps:
 1. Open console from the project root
 2. Run the command `npm install`
 3. Run the command `npm run dev`.
-4: [http://localhost:3000/](http://localhost:3000/)
-5: Enjoy :)
+4. [http://localhost:3000/](http://localhost:3000/)
+5. Enjoy :)
 
 ## All npm commands
 
