@@ -5,6 +5,10 @@
   float: left;
   width: 170px;
   height: 30px;
+
+  @media (max-width: $SCREEN_XS_MAX) {
+    width: calc(100% - 100px);
+  }
 }
 .add-button {
   float: right;

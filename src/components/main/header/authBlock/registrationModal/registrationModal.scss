@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-size: 14px;
   color: $COLOR--gray;
+
+  @media (max-width: $SCREEN_XS_MAX) {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
 .tip-message {
   display: inline-block;
@@ -33,6 +38,10 @@
   line-height: 30px;
   font-size: 12px;
 
+  @media (max-width: $SCREEN_XS_MAX) {
+    display: block;
+  }
+
   &::after {
     content: '*';
     margin-left: 3px;
@@ -43,10 +52,18 @@
   float: right;
   width: 250px;
   height: 30px;
+
+  @media (max-width: $SCREEN_XS_MAX) {
+    width: 100%;
+  }
 }
 .ip-field {
   float: right;
   width: 250px;
+
+  @media (max-width: $SCREEN_XS_MAX) {
+    width: 100%;
+  }
 }
 .hidden {
   display: none;
