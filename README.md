@@ -2,11 +2,13 @@
 
 For development, you need a [node.js](https://nodejs.org).
 
-To launch the development environment, follow these steps:
+To launch the application, follow these steps:
 
-1. open console from the project root
-2. run the command `npm install`
-3. run the command `npm run dev`, enjoy the development.
+1. Open console from the project root
+2. Run the command `npm install`
+3. Run the command `npm run dev`.
+4: [http://localhost:3000/](http://localhost:3000/)
+5: Enjoy :)
 
 ## All npm commands
 
