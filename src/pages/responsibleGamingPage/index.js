@@ -1,0 +1,1 @@
+export { ResponsibleGamingPage } from './responsibleGamingPage';

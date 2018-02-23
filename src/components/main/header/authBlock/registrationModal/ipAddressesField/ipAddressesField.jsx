@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 @reduxForm({
   form: 'IpAddresses',
   validate: ({ ip }, props) => ({
-    ip: (!props.isAddresses && (!ip || !validate.ip(ip))) && 'ipHint',
+    ip: (!props.isAddresses && (!ip || (~props.ipAddresses.indexOf(ip)) || !validate.ip(ip))) && 'ipHint',
   }),
 })
 export class IpAddressesField extends Component {

@@ -21,8 +21,48 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90%;
+  height: 70%;
+  max-width: 800px;
+}
+.automats-layer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/logo/logo-automat.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  animation: up-n-down 3s infinite;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+}
+.chips-layer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 80%;
-  max-width: 700px;
+  height: 100%;
+  background-image: url(./img/logo/logo-chips.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  animation: bigger-smaller 4s infinite;
+  animation-timing-function: linear;
+}
+.label-layer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 100%;
+  background-image: url(./img/logo/logo-label.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 .statistics-wrapper {
   position: relative;
@@ -107,4 +147,19 @@
   margin: 40px auto 30px auto;
   height: 30px;
   width: 130px;
+}
+
+@keyframes up-n-down {
+  0% {  top: 0; }
+  25% {  top: -20px; }
+  50% {  top: 0; }
+  75% {  top: 20px; }
+  100% {  top: 0; }
+}
+@keyframes bigger-smaller {
+  0% {  width: 80%; }
+  25% {  width: 85%; }
+  50% {  width: 80%; }
+  75% {  width: 75%; }
+  100% {  width: 80%; }
 }

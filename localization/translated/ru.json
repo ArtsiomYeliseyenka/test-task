@@ -25,7 +25,7 @@
   "Promotions.title": "Промо акции",
   "RegistrationForm.confirmPasswordHint": "Пароли не совпадают",
   "RegistrationForm.email": "Email невалиден",
-  "RegistrationForm.ipHint": "IP адрес невалиден",
+  "RegistrationForm.ipHint": "IP адрес невалиден или уже добавлен",
   "RegistrationForm.nameHint": "Поле не должно быть пустым",
   "RegistrationForm.passwordHint": "От '6' до '16' символов",
   "SortControl.sortBy": "Сортировать по:",

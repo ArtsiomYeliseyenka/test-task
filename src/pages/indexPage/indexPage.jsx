@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Parser from 'html-react-parser';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape, defineMessages } from 'react-intl';
@@ -15,7 +14,6 @@ import { NeonButton } from 'components/buttons/neonButton';
 import { NeonGhostButton } from 'components/buttons/neonGhostButton';
 import { SortControl } from 'components/main/sortControl';
 
-import AnimatedLogo from './img/animated-logo-inline.svg';
 import CardsIcon from './img/cards-icon.png';
 import NewIcon from './img/new-icon.png';
 import PopularIcon from './img/popular-icon.png';
@@ -60,7 +58,6 @@ export class IndexPage extends Component {
   state = {
     sortCriteria: 'abcSort',
   };
-
   componentWillMount() {
     this.props.fetchGamesAction();
   }
@@ -73,7 +70,9 @@ export class IndexPage extends Component {
       <div className={cx('index-page')}>
         <div className={cx('main-banner')}>
           <div className={cx('animated-logo')}>
-            { Parser(AnimatedLogo) }
+            <div className={cx('automats-layer')} />
+            <div className={cx('label-layer')} />
+            <div className={cx('chips-layer')} />
           </div>
         </div>
 

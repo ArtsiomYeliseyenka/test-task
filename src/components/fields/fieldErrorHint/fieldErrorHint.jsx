@@ -11,7 +11,7 @@ const messages = defineMessages({
   passwordHint: { id: 'RegistrationForm.passwordHint', defaultMessage: 'From \'6\' to \'16\' symbols' },
   emailHint: { id: 'RegistrationForm.email', defaultMessage: 'Email is invalid' },
   confirmPasswordHint: { id: 'RegistrationForm.confirmPasswordHint', defaultMessage: 'Passwords not equal' },
-  ipHint: { id: 'RegistrationForm.ipHint', defaultMessage: 'IP address is invalid' },
+  ipHint: { id: 'RegistrationForm.ipHint', defaultMessage: 'IP address is invalid or already exists' },
 });
 
 @injectIntl
